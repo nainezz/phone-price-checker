@@ -1,6 +1,6 @@
 # 📱 Phone Price Checker
 
-Compare **ex-UK** and **ex-USA** smartphone prices in Kenya by model, storage and grade, across 7 brands: iPhone, Samsung, Google Pixel, OnePlus, Motorola, Sony and Huawei.
+Compare **ex-UK** and **ex-USA** smartphone prices in Kenya by model, storage and grade, across 8 brands: iPhone, Samsung, Google Pixel, OnePlus, Motorola, Sony, Huawei and Infinix.
 
 **🔗 Live demo:** https://nainezz.github.io/phone-price-checker/
 

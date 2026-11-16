@@ -143,5 +143,19 @@ const PHONES = [
   { brand: "Huawei", model: "Mate 20 Pro", prices: {
       "128GB": { uk: 18500, usa: 20000 } } },
   { brand: "Huawei", model: "P40 Pro", prices: {
-      "256GB": { uk: 38000, usa: 40500 } } }
+      "256GB": { uk: 38000, usa: 40500 } } },
+
+  // ---------- Infinix ----------
+  { brand: "Infinix", model: "Hot 40 Pro", prices: {
+      "256GB": { uk: 16500, usa: 17500 } } },
+  { brand: "Infinix", model: "Note 30 Pro", prices: {
+      "256GB": { uk: 21000, usa: 20000 } } },
+  { brand: "Infinix", model: "Note 40 Pro", prices: {
+      "256GB": { uk: 26000, usa: 27000 } } },
+  { brand: "Infinix", model: "Zero 30 5G", prices: {
+      "256GB": { uk: 28500, usa: 27500 } } },
+  { brand: "Infinix", model: "GT 20 Pro", prices: {
+      "256GB": { uk: 30000, usa: 31500 } } },
+  { brand: "Infinix", model: "Zero Ultra", prices: {
+      "256GB": { uk: 33000, usa: 32000 } } }
 ];
