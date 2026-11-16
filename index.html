@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phone Price Checker — Ex-UK vs Ex-USA prices in Kenya</title>
+  <meta name="description" content="Compare ex-UK and ex-USA smartphone prices in Kenya by model, storage and grade.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#"><i></i>Phone Price Checker</a>
+    <nav>
+      <a href="#compare">Compare</a>
+      <a href="#budget">Budget</a>
+      <a href="#prices">All prices</a>
+      <a href="#grades">Grades</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro wrap">
+    <span class="pill">🇬🇧 ex-UK vs 🇺🇸 ex-USA · Kenya</span>
+    <h1>Find the best price for your next phone.</h1>
+    <p>Pick a model, storage and grade to compare ex-UK and ex-USA prices side by side.</p>
+  </section>
+
+  <!-- COMPARE -->
+  <section id="compare" class="wrap">
+    <div class="panel">
+      <div class="controls">
+        <label>Brand
+          <select id="brand"></select>
+        </label>
+        <label>Model
+          <select id="model"></select>
+        </label>
+        <label>Storage
+          <select id="storage"></select>
+        </label>
+        <div class="field">
+          <span class="field-label">Grade</span>
+          <div class="seg" id="grade" role="radiogroup" aria-label="Grade"></div>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="price-card" id="cardUK">
+          <div class="pc-head"><span class="flag">🇬🇧</span> ex-UK</div>
+          <div class="pc-price" id="priceUK">—</div>
+          <div class="pc-tag" id="tagUK"></div>
+        </div>
+        <div class="vs">vs</div>
+        <div class="price-card" id="cardUSA">
+          <div class="pc-head"><span class="flag">🇺🇸</span> ex-USA</div>
+          <div class="pc-price" id="priceUSA">—</div>
+          <div class="pc-tag" id="tagUSA"></div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <p id="summary"></p>
+        <a class="btn primary" id="askBtn" target="_blank" rel="noopener">Ask about availability on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUDGET -->
+  <section id="budget" class="wrap">
+    <div class="sec-head">
+      <h2>What can I get for my budget?</h2>
+      <p>Slide to your budget and see every phone you can afford.</p>
+    </div>
+    <div class="panel">
+      <div class="budget-top">
+        <div>
+          <span class="field-label">Your budget</span>
+          <div class="budget-val" id="budgetVal"></div>
+        </div>
+        <div class="budget-opts">
+          <label class="check"><input type="checkbox" id="budgetBestOnly" checked> Best option per model only</label>
+        </div>
+      </div>
+      <input type="range" id="budgetRange" min="20000" max="140000" step="1000" value="50000" aria-label="Budget">
+      <div class="budget-count" id="budgetCount"></div>
+      <div class="budget-list" id="budgetList"></div>
+    </div>
+  </section>
+
+  <!-- TABLE -->
+  <section id="prices" class="wrap">
+    <div class="sec-head">
+      <h2>All prices</h2>
+      <p>Grade A+ prices. Click a row to load it into the comparer.</p>
+    </div>
+    <div class="panel">
+      <div class="table-tools">
+        <input type="search" id="search" placeholder="Search a model, e.g. 13 Pro" aria-label="Search">
+        <div class="seg small" id="brandFilter"></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th data-sort="model">Model</th>
+              <th data-sort="storage">Storage</th>
+              <th data-sort="uk" class="num">ex-UK</th>
+              <th data-sort="usa" class="num">ex-USA</th>
+              <th data-sort="diff" class="num">Difference</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <p class="empty" id="emptyMsg" hidden>No phones match your search.</p>
+    </div>
+  </section>
+
+  <!-- GRADES -->
+  <section id="grades" class="wrap">
+    <div class="sec-head">
+      <h2>What do the grades mean?</h2>
+      <p>Imported phones are graded by how they look. All grades work fully.</p>
+    </div>
+    <div class="grade-grid" id="gradeGrid"></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p class="disclaimer">⚠️ Sample prices for demonstration. Prices change often — always confirm before you buy. Last updated <span id="updated"></span>.</p>
+  <p>Built by <a href="https://github.com/nainezz" target="_blank" rel="noopener">Nainezz</a> · <a href="https://github.com/nainezz/phone-price-checker" target="_blank" rel="noopener">Source code</a></p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
