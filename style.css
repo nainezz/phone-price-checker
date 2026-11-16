@@ -96,7 +96,12 @@ input[type="range"] { width: 100%; accent-color: var(--accent); height: 6px; cur
 .b-item:hover { border-color: var(--accent); }
 .b-item b { display: block; font-size: .98rem; }
 .b-item span { color: var(--muted); font-size: .82rem; }
-.b-item .b-price { display: block; font-family: "Space Grotesk"; font-weight: 700; color: var(--accent); margin-top: 6px; font-size: 1.1rem; }
+.b-item .b-origin { display: flex; justify-content: space-between; gap: 8px; margin-top: 6px; font-size: .84rem; color: var(--muted); }
+.b-item > span:not(.b-origin) { display: block; margin-bottom: 4px; }
+.b-item .b-origin em { font-style: normal; font-family: "Space Grotesk"; font-weight: 700; color: var(--ink); }
+.b-item .b-origin.best em { color: var(--accent); }
+.b-item .b-origin.over { opacity: .45; }
+.b-item .b-origin.over em { text-decoration: line-through; }
 
 /* Table */
 .table-tools { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }

@@ -1,6 +1,6 @@
 # 📱 Phone Price Checker
 
-Compare **ex-UK** and **ex-USA** smartphone prices in Kenya by model, storage and grade.
+Compare **ex-UK** and **ex-USA** smartphone prices in Kenya by model, storage and grade, across 7 brands: iPhone, Samsung, Google Pixel, OnePlus, Motorola, Sony and Huawei.
 
 **🔗 Live demo:** https://nainezz.github.io/phone-price-checker/
 
@@ -9,7 +9,7 @@ Buyers in Kenya often choose between phones imported from the UK and from the US
 ## Features
 
 - **Side-by-side compare.** Pick a brand, model, storage and grade to see ex-UK vs ex-USA prices. The cheaper option is highlighted along with the saving.
-- **Budget finder.** Slide to your budget and see every phone you can afford, with the best storage and grade option for each model.
+- **Budget finder.** Slide to your budget and see every phone you can afford, with both ex-UK and ex-USA prices. The cheaper one is highlighted and any over budget is crossed out.
 - **Full price table.** Search, filter by brand and sort by any column. Click a row to load it into the comparer.
 - **Grade guide.** A short explanation of what Grade A+, A and B mean.
 - **WhatsApp enquiry.** One tap sends a pre-filled message about the selected phone.

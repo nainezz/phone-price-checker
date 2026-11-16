@@ -115,14 +115,15 @@
     const bestOnly = $("budgetBestOnly").checked;
     $("budgetVal").textContent = money(budget);
 
-    // Every model/storage/grade/origin combo within budget
+    // Every model/storage/grade combo where at least one origin fits the budget.
+    // Both ex-UK and ex-USA prices are kept so the user can compare them.
     let options = [];
     ROWS.forEach((r) => {
       Object.keys(GRADES).forEach((g) => {
-        ["uk", "usa"].forEach((o) => {
-          const price = priceFor(r.phone, r.storage, g, o);
-          if (price <= budget) options.push({ ...r, grade: g, origin: o, price });
-        });
+        const uk = priceFor(r.phone, r.storage, g, "uk");
+        const usa = priceFor(r.phone, r.storage, g, "usa");
+        const price = Math.min(uk, usa);
+        if (price <= budget) options.push({ ...r, grade: g, ukPrice: uk, usaPrice: usa, price });
       });
     });
 
@@ -149,13 +150,19 @@
       ? `${options.length} option${options.length === 1 ? "" : "s"} within your budget`
       : "Nothing in this range yet — try a higher budget.";
 
+    const originLine = (flag, label, p, o) => {
+      const cls = p > budget ? "over" : p === o.price ? "best" : "";
+      return `<span class="b-origin ${cls}">${flag} ${label} <em>${money(p)}</em></span>`;
+    };
+
     $("budgetList").innerHTML = options
       .map(
         (o) => `
       <button class="b-item" data-model="${o.model}" data-storage="${o.storage}" data-grade="${o.grade}">
         <b>${o.model}</b>
-        <span>${o.storage} · Grade ${o.grade} · ${o.origin === "uk" ? "🇬🇧 ex-UK" : "🇺🇸 ex-USA"}</span>
-        <span class="b-price">${money(o.price)}</span>
+        <span>${o.brand} · ${o.storage} · Grade ${o.grade}</span>
+        ${originLine("🇬🇧", "ex-UK", o.ukPrice, o)}
+        ${originLine("🇺🇸", "ex-USA", o.usaPrice, o)}
       </button>`
       )
       .join("");
